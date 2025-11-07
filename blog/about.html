@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Título del Artículo</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: #DDDFE6;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background-color: #05081A;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    nav ul {
+      background-color: #0C1445;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+      height: 80px;
+      box-shadow: 0 0 15px rgba(70, 90, 255, 0.3);
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    nav li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      background-color: #1A2672;
+      padding: 12px 35px;
+      border-radius: 15px;
+      color: #DDDFE6;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #2f3cff;
+      box-shadow: 0 0 12px rgba(100, 140, 255, 0.6);
+    }
+
+    nav img {
+      height: 65px;
+      display: block;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .articulo {
+      width: 70%;
+      max-width: 900px;
+      background-color: #0A0F2D;
+      padding: 40px;
+      box-shadow: inset 0 0 25px rgba(90, 120, 255, 0.1);
+      border-radius: 15px;
+    }
+
+    .articulo header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .articulo header img {
+      width: 60%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #1B2A7A;
+      margin-top: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .articulo h1 {
+      color: #9AB5FF;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px rgba(100, 140, 255, 0.5);
+    }
+
+    .articulo h2 {
+      color: #9AB5FF;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px rgba(130, 160, 255, 0.4);
+    }
+
+    .articulo p {
+      padding: 10px 0;
+      line-height: 1.5;
+    }
+
+    .articulo section {
+      margin-bottom: 30px;
+    }
+
+    .articulo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #1B2A7A;
+      margin-top: 10px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #273878;
+      margin: 25px 0;
+    }
+
+    aside {
+      width: 25%;
+      background-color: #151B47;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 25px rgba(60, 90, 255, 0.1);
+    }
+
+    aside h3 {
+      color: #B8C5FF;
+      margin-bottom: 10px;
+    }
+
+    aside img {
+      border-radius: 90px;
+      border: 2px solid #DDDFE6;
+      float: right;
+      margin-left: 10px;
+    }
+
+    aside p {
+      padding-top: 5px;
+      text-align: justify;
+    }
+
+    #listaredes {
+      list-style: none;
+      padding: 5px;
+      text-align: center;
+    }
+
+    #listaredes li {
+      display: inline-block;
+      margin: 8px;
+    }
+
+    #listaredes img {
+      height: 40px;
+      width: 40px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #listaredes img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    }
+
+    footer {
+      background-color: #0C1445;
+      color: #DDDFE6;
+      padding: 40px 30px;
+      box-shadow: 0 -3px 10px rgba(50, 70, 255, 0.3);
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col h3 {
+      color: #9AB5FF;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px rgba(130, 160, 255, 0.6);
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .footer-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-list li {
+      margin-bottom: 8px;
+    }
+
+    .footer-list a {
+      color: #B8C5FF;
+      transition: 0.3s;
+    }
+
+    .footer-list a:hover {
+      color: #C3D0FF;
+      text-shadow: 0 0 6px rgba(150, 170, 255, 0.6);
+    }
+
+    .btn-top {
+      margin-top: 15px;
+      background-color: #FF2E63;
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-top:hover {
+      background-color: #FF4F7A;
+      box-shadow: 0 0 18px rgba(255, 46, 99, 0.6);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .articulo {
+        width: 92%;
+        padding: 28px;
+      }
+
+      aside {
+        width: 92%;
+        margin-top: 28px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 16px 0;
+        gap: 8px;
+      }
+
+      nav li {
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav a {
+        display: block;
+        width: 92%;
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 14px 0;
+        border-radius: 12px;
+      }
+
+      nav img {
+        display: none;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        width: 94%;
+        font-size: 0.95rem;
+        padding: 12px 0;
+      }
+
+      .articulo h1 {
+        font-size: 1.6rem;
+      }
+
+      .articulo header img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <img src="imgblog/logo.png" alt="LOGO">
+      <li><a href="principal.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publicaciones.html">Publicaciones</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="articulo">
+      <header>
+        <h1>Un poco sobre el autor</h1>
+        <img src="imgblog/corazon.jpg" alt="Imagen principal del artículo">
+      </header>
+
+      <section>
+        <h2>El por qué del Blog</h2>
+        <p>Hace ya casi 2 años me mudé a la capital del país para poder continuar con mi trayectoria academica. El ruido de la ciudad, la gente, el peso de las responsabilidades, fue un cambio rotundo. Pasaron los días, los fines de semana, los examenes, y con mis amigos que compartian mi situacion solo teniamos 1 pregunta; "¿Qué hacemos hoy?". Al no encontrar una respuesta, tuve esta iniciativa para ayudar y "guiar" a aquellos que están en el lugar donde supe estar yo.</p>
+        <img src="imgblog/cabanoche.jpeg" alt="Imagen de la ubicación" style="width:100%; height:auto; border-radius:8px; border:1px solid #1B2A7A; margin-top:10px;">
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Más sobre mí</h2>
+        <p>Nací un 15 de Diciembre del 2005, en la localidad de Moreno, Provincia de Buenos Aires. A los 2 años me alejé un poco más de la ciudad y me mudé a Luján, lugar donde crecí. Es un lugar que siempre voy a considerar mi casa, con su ritmo tranquilo, sus paisajes y la gente que conozco y aprecio desde chico.</p>
+        <br>
+        <p>Ahora, me encuentro viviendo en Belgrano, pero regreso todos los viernes a Luján. Lo hago para reencontrarme con mi familia, mis amigos y los lugares de siempre. Ese equilibrio entre la ciudad y el regreso a mi lugar favorito en el mundo, siento que define gran parte de quién soy.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Bautista Goldberg</h3>
+        <p>Blog de la noche</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Categorías</h3>
+        <ul class="footer-list">
+          <li><a href="caba.html">CABA</a></li>
+          <li><a href="pba.html">PBA</a></li>
+          <li><a href="rural.html">RURAL</a></li>
+          <li><a href="cachengue.html">CACHENGUE</a></li>
+          <li><a href="rkt.html">RKT</a></li>
+          <li><a href="pena.html">PEÑA</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Mapa del sitio</h3>
+        <ul class="footer-list">
+          <li><a href="principal.html">Inicio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="formulario.html">Contacto</a></li>
+          <br>
+          <li><a href="#" class="btn-top">↑ Volver arriba</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

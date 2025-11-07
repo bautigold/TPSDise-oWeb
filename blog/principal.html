@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  
+  <style>  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #DDDFE6;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #05081A;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul {
+  background-color: #0C1445;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  height: 80px;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(70, 90, 255, 0.3);
+}
+
+nav a {
+  background-color: #1A2672;
+  padding: 10px 40px;
+  border-radius: 15px;
+  color: #DDDFE6;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #2f3cff;
+  box-shadow: 0 0 12px rgba(100, 140, 255, 0.6);
+}
+
+nav img {
+  height: 70px;
+}
+
+main {
+  display: flex;
+}
+
+.feed {
+  width: 70%;
+  background-color: #0A0F2D;
+  padding: 30px;
+  box-shadow: inset 0 0 25px rgba(90, 120, 255, 0.1);
+}
+
+.feed article {
+  margin-bottom: 40px;
+}
+
+.feed ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.feed ul li {
+  display: inline-block;
+  background-color: #1E2D7A;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.feed h2 {
+  color: #9AB5FF;
+  font-size: 1.6rem;
+  margin: 10px 0;
+  text-shadow: 0 0 8px rgba(130, 160, 255, 0.6);
+}
+
+.feed p {
+  margin: 8px 0;
+}
+
+.feed img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #1B2A7A;
+  margin: 10px 0 15px 0;
+}
+
+.continuar {
+  display: inline-block;
+  background-color: #FF2E63;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.continuar:hover {
+  background-color: #FF4F7A;
+  box-shadow: 0 0 18px rgba(255, 46, 99, 0.6);
+  transform: translateY(-2px);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #273878;
+  margin: 20px 0;
+}
+
+aside {
+  background-color: #151B47;
+  width: 30%;
+  padding: 25px;
+  box-shadow: inset 0 0 25px rgba(60, 90, 255, 0.1);
+}
+
+aside h3 {
+  color: #B8C5FF;
+  margin-bottom: 10px;
+}
+
+aside img {
+  border-radius: 90px;
+  border: 2px solid #DDDFE6;
+  float: right;
+  margin: 0 5px 10px 10px;
+}
+
+aside p {
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+#listaredes {
+  list-style: none;
+  padding: 5px;
+  text-align: center;
+}
+
+#listaredes li {
+  display: inline-block;
+  margin: 8px;
+}
+
+#listaredes img {
+  height: 40px;
+  width: 40px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#listaredes img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.subscribirse {
+  background-color: #0A0F2D;
+  border: 1px solid #1B2A7A;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 0 12px rgba(60, 90, 255, 0.2);
+  text-align: center;
+}
+
+.subscribirse label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #B8C5FF;
+}
+
+.subscribirse input[type="email"] {
+  width: 90%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #1B2A7A;
+  background-color: #141C4C;
+  color: #DDDFE6;
+  margin-bottom: 10px;
+}
+
+.subscribirse input[type="submit"] {
+  background-color: #1A2672;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 15px;
+  color: #DDDFE6;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribirse input[type="submit"]:hover {
+  background-color: #2f3cff;
+  box-shadow: 0 0 10px rgba(100, 140, 255, 0.5);
+}
+
+.galeria-aside {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.galeria-aside img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #1B2A7A;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #0C1445;
+  color: #DDDFE6;
+  padding: 40px 30px;
+  box-shadow: 0 -3px 10px rgba(50, 70, 255, 0.3);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  color: #9AB5FF;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(130, 160, 255, 0.6);
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+}
+
+.footer-list a {
+  color: #B8C5FF;
+  transition: 0.3s;
+}
+
+.footer-list a:hover {
+  color: #C3D0FF;
+  text-shadow: 0 0 6px rgba(150, 170, 255, 0.6);
+}
+
+.btn-top {
+  margin-top: 15px;
+  background-color: #FF2E63;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-top:hover {
+  background-color: #FF4F7A;
+  box-shadow: 0 0 18px rgba(255, 46, 99, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    width: 80%;
+    display: inline-block;
+    margin: 5px 0;
+  }
+
+  nav img {
+    display: none;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .feed {
+    width: 100%;
+    padding: 15px;
+  }
+
+  aside {
+    width: 100%;
+    order: -1;
+    padding: 15px;
+  }
+
+  .feed article {
+    margin-bottom: 30px;
+  }
+
+  .galeria-aside {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-list li {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .galeria-aside {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <img src="imgblog/logo.png" alt="LOGO">
+      <li><a href="principal.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publicaciones.html">Publicaciones</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="feed">
+      <article>
+        <ul>
+          <li><a href="caba.html">CABA</a></li>
+          <li><a href="rural.html">RURAL</a></li>
+          <li><a href="cachengue.html">CACHENGUE</a></li>
+        </ul>
+
+        <h2>Cruza Polo</h2>
+        <p>Publicado por <a href="bautig.html">Bautista Goldberg</a> en Octubre 2025</p>
+        <img src="imgblog/cruza-polo.jpg" alt="Portada Articulo" height="auto" width="auto">
+        <p>Av. del Libertador 4100, C1426 Cdad. Autónoma de Buenos Aires<br>En el corazón de Palermo frente al hipódromo podés disfrutar una excelente noche todos los Viernes y Sábados del año.</p>
+        <a href="cruzapolo.html" class="continuar">Continuar leyendo →</a>
+      </article>
+
+      <hr>
+
+      <article>
+        <ul>
+          <li><a href="rural.html">RURAL</a></li>
+          <li><a href="caba.html">CABA</a></li>
+          <li><a href="pena.html">PEÑA</a></li>
+        </ul>
+
+        <h2>La Tincho Fierro</h2>
+        <p>Publicado por <a href="bautig.html">Bautista Goldberg</a> en Octubre 2025</p>
+        <img src="imgblog/latincho.jpg" alt="Portada Articulo">
+        <p>Vicente López 2134, C1128ACH Cdad. Autónoma de Buenos Aires<br>En el antiguo y lujoso barrio de Recoleta se encuentra LTF, más que un boliche es un sentimiento.</p>
+        <a href="latinchofierro.html" class="continuar">Continuar leyendo →</a>
+      </article>
+
+      <hr>
+
+      <article>
+        <ul>
+          <li><a href="pba.html">PBA</a></li>
+          <li><a href="rkt.html">RKT</a></li>
+          <li><a href="rural.html">RURAL</a></li>
+        </ul>
+
+        <h2>Kita Bar</h2>
+        <p>Publicado por <a href="bautig.html">Bautista Goldberg</a> en Octubre 2025</p>
+        <img src="imgblog/kita.jpg" alt="Portada Articulo">
+        <p>San Martín 684, B6700 Luján, Provincia de Buenos Aires<br>A unos 60 km de la ciudad, en la capital de la fe, se encuentra un pequeño pero divertido bar que ofrece distintos planes de Jueves a Sábados.</p>
+        <a href="kita.html" class="continuar">Continuar leyendo →</a>
+      </article>
+    </section>
+
+  <aside>
+    <section class="perfil">
+      <h3>Hola, Soy Bautista</h3>
+      <img src="imgblog/pfp.jpg" alt="PFP" width="120px">
+      <p>Me considero un aficionado por la noche, en este Blog voy a estar exhibiendo, recomendando y, por qué no, criticando distintas opciones de actividades para hacer en la Ciudad Autónoma de Buenos Aires y sus alrededores.</p>
+    </section>
+
+    <section class="redes">
+      <h3>Conectemos!</h3>
+      <ul id="listaredes">
+        <li><a href="https://www.instagram.com/bautigoldberg/"><img src="imgblog/instagram.png" alt=""></a></li>
+        <li><a href="https://open.spotify.com/user/bauticai11?si=5fa020f08d204bab"><img src="imgblog/spotify.png" alt=""></a></li>
+        <li><a href="../linktree.html"><img src="imgblog/linktree.png" alt=""></a></li>
+      </ul>
+    </section>
+
+    <section class="subscribirse">
+      <h3>Suscribite para más información</h3>
+      <form action="recibido.html">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email">
+        <input type="submit" value="Suscribirme">
+      </form>
+    </section>
+
+    <section class="galeria-aside">
+      <img src="imgblog/anteojos.jpeg" alt="foto 1">
+      <img src="imgblog/disfraces.jpeg" alt="foto 2">
+      <img src="imgblog/mclovin.jpeg" alt="foto 3">
+      <img src="imgblog/dj.jpeg" alt="foto 4">
+    </section>
+  </aside>
+  </main>
+
+  <footer>
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h3>Bautista Goldberg</h3>
+      <p>Blog de la noche</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Categorías</h3>
+      <ul class="footer-list">
+        <li><a href="caba.html">CABA</a></li>
+        <li><a href="pba.html">PBA</a></li>
+        <li><a href="rural.html">RURAL</a></li>
+        <li><a href="cachengue.html">CACHENGUE</a></li>
+        <li><a href="rkt.html">RKT</a></li>
+        <li><a href="pena.html">PEÑA</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Mapa del sitio</h3>
+      <ul class="footer-list">
+        <li><a href="principal.html">Inicio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publicaciones.html">Publicaciones</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <br>
+        <li><a href="#" class="btn-top"> ↑ Volver arriba </a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

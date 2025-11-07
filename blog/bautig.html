@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicaciones - Blog</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #05081A;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      color: #DDDFE6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    nav { width: 100%; }
+    nav ul {
+      background-color: #0C1445;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+      height: 80px;
+      box-shadow: 0 0 15px rgba(70, 90, 255, 0.3);
+      width: 100%;
+      padding: 0 10px;
+    }
+    nav li { display: flex; align-items: center; }
+    nav a {
+      background-color: #1A2672;
+      padding: 12px 35px;
+      border-radius: 15px;
+      color: #DDDFE6;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+    }
+    nav a:hover { background-color: #2f3cff; box-shadow: 0 0 12px rgba(100,140,255,0.6); }
+    nav img { height: 65px; display: block; }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 50px 0 40px 0;
+      color: #9AB5FF;
+      text-shadow: 0 0 10px #4e5eff, 0 0 20px #4e5eff, 0 0 30px #4e5eff, 0 0 40px #2f3cff;
+      animation: glow 2s ease-in-out infinite alternate;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      background-color: #0A0F2D;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(90, 120, 255, 0.2);
+      padding: 25px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #0C1445;
+      border-radius: 12px;
+      padding: 15px;
+      width: 220px;
+      border: 1px solid #1B2A7A;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      text-align: center;
+    }
+    .item:hover { background-color: #1A2672; box-shadow: 0 0 20px rgba(100,140,255,0.4); transform: translateY(-5px); }
+    .item h3 {
+      color: #9AB5FF; font-size: 1.1rem; margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(130,160,255,0.4); transition: color 0.3s;
+    }
+    .item h3:hover { color: #c3d0ff; }
+    .item img {
+      border-radius: 10px; border: 2px solid #1B2A7A;
+      width: 100%; height: 200px; object-fit: cover;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .item img:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(120,160,255,0.5); }
+
+    .volver {
+      margin: 40px 0 60px 0;
+      padding: 12px 35px;
+      background-color: #1A2672;
+      color: #DDDFE6;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(80,110,255,0.4);
+    }
+    .volver:hover { background-color: #2f3cff; box-shadow: 0 0 20px rgba(130,160,255,0.8); color: #fff; transform: translateY(-3px); }
+
+    footer {
+      background-color: #0C1445;
+      color: #DDDFE6;
+      padding: 40px 30px;
+      box-shadow: 0 -3px 10px rgba(50, 70, 255, 0.3);
+      width: 100%;
+      margin-top: 10px;
+    }
+    .footer-container {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 { color: #9AB5FF; margin-bottom: 10px; text-shadow: 0 0 8px rgba(130,160,255,0.6); }
+    .footer-list { list-style: none; padding: 0; }
+    .footer-list li { margin-bottom: 8px; }
+    .footer-list a { color: #B8C5FF; transition: 0.3s; }
+    .footer-list a:hover { color: #C3D0FF; text-shadow: 0 0 6px rgba(150,170,255,0.6); }
+    .btn-top {
+      margin-top: 15px; background-color: #FF2E63; color: #FFFFFF; padding: 8px 15px;
+      border-radius: 10px; font-weight: bold; transition: 0.3s; display: inline-block; text-align: center;
+    }
+    .btn-top:hover { background-color: #FF4F7A; box-shadow: 0 0 18px rgba(255,46,99,0.6); transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        height: auto;
+        padding: 16px 0;
+        gap: 8px;
+      }
+      nav img { display: none; }
+      nav li { width: 100%; }
+      nav a {
+        display: block;
+        width: 92%;
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 14px 0;
+        border-radius: 12px;
+      }
+
+      .galeria { flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
+      .item { width: 90%; }
+      .item img { height: 180px; }
+
+      .footer-container { flex-direction: column; align-items: center; text-align: center; }
+      .footer-col { width: 100%; }
+    }
+
+    @keyframes glow { from { text-shadow: 0 0 10px #4e5eff; } to { text-shadow: 0 0 30px #2f3cff; } }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <img src="imgblog/logo.png" alt="LOGO">
+      <li><a href="principal.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publicaciones.html">Publicaciones</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <h1>Publicados por Bautista Goldberg</h1>
+
+  <div class="galeria">
+    <div class="item">
+      <a href="cruzapolo.html">
+        <h3>Cruza Polo</h3>
+        <img src="imgblog/favicon-CP.jpg" alt="Cruza Polo">
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="latinchofierro.html">
+        <h3>La Tincho</h3>
+        <img src="imgblog/la-tincho-fierro-recoleta-rec.jpg" alt="La Tincho Fierro">
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="kita.html">
+        <h3>Kita Bar</h3>
+        <img src="imgblog/kitalogo.png" alt="Kita Bar">
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="cruzarecoleta.html">
+        <h3>Cruza Recoleta</h3>
+        <img src="imgblog/Crecoleta.jpg" alt="Cruza Recoleta">
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="tamarisco.html">
+        <h3>Tamarisco</h3>
+        <img src="imgblog/tamarisco.jpeg" alt="Tamarisco">
+      </a>
+    </div>
+  </div>
+
+  <br>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Bautista Goldberg</h3>
+        <p>Blog de la noche</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Categorías</h3>
+        <ul class="footer-list">
+          <li><a href="caba.html">CABA</a></li>
+          <li><a href="pba.html">PBA</a></li>
+          <li><a href="rural.html">RURAL</a></li>
+          <li><a href="cachengue.html">CACHENGUE</a></li>
+          <li><a href="rkt.html">RKT</a></li>
+          <li><a href="pena.html">PEÑA</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Mapa del sitio</h3>
+        <ul class="footer-list">
+          <li><a href="principal.html">Inicio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="formulario.html">Contacto</a></li>
+          <br>
+          <li><a href="#" class="btn-top">↑ Volver arriba</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

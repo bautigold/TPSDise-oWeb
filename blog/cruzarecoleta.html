@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cruza R - Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #05081A;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      color: #DDDFE6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    nav { width: 100%; }
+    nav ul {
+      background-color: #0C1445;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+      height: 80px;
+      box-shadow: 0 0 15px rgba(70, 90, 255, 0.3);
+      width: 100%;
+      padding: 0 10px;
+    }
+    nav li { display: flex; align-items: center; }
+    nav a {
+      background-color: #1A2672;
+      padding: 12px 35px;
+      border-radius: 15px;
+      color: #DDDFE6;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+      display: inline-block;
+    }
+    nav a:hover { background-color: #2f3cff; box-shadow: 0 0 12px rgba(100,140,255,0.6); }
+    nav img { height: 70px; display: block; }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .articulo {
+      width: 70%;
+      max-width: 900px;
+      background-color: #0A0F2D;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 25px rgba(90,120,255,0.1);
+    }
+    .articulo header { text-align: center; margin-bottom: 28px; }
+    .articulo header img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #1B2A7A;
+      margin-top: 15px;
+    }
+    .articulo h1 {
+      color: #9AB5FF;
+      font-size: 2rem;
+      margin-bottom: 6px;
+      text-shadow: 0 0 8px rgba(100,140,255,0.5);
+    }
+    .articulo h2 { color: #9AB5FF; margin-bottom: 8px; }
+    .articulo p { line-height: 1.65; margin: 10px 0; }
+    .articulo section { margin-bottom: 28px; }
+    .articulo img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #1B2A7A;
+      margin-top: 10px;
+    }
+    hr { border: 0; border-top: 1px solid #273878; margin: 24px 0; }
+
+    .botones-navegacion {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0 50px 0;
+    }
+
+    .botones-navegacion a {
+      background-color: #1A2672;
+      color: #DDDFE6;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.3s;
+      width: fit-content;
+    }
+
+    .botones-navegacion a:hover {
+      background-color: #2f3cff;
+      box-shadow: 0 0 15px rgba(100,140,255,0.6);
+      transform: translateY(-2px);
+    }
+
+    aside {
+      width: 25%;
+      max-width: 340px;
+      background-color: #151B47;
+      padding: 24px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 25px rgba(60,90,255,0.1);
+    }
+
+    .perfil h3, .redes h3, .subscribirse h3 { color: #B8C5FF; margin-bottom: 10px; }
+    .perfil .pfp {
+      display: block;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #DDDFE6;
+      object-fit: cover;
+      margin: 6px auto 14px auto;
+    }
+    .perfil p {
+      line-height: 1.7;
+      color: #E6E9F5;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    #listaredes { list-style: none; text-align: center; margin: 6px 0 10px 0; }
+    #listaredes li { display: inline-block; margin: 8px; }
+    #listaredes img {
+      height: 44px; width: 44px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      padding: 6px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    #listaredes img:hover { transform: scale(1.1); box-shadow: 0 0 12px rgba(255,255,255,0.8); }
+
+    .subscribirse {
+      background-color: #0A0F2D;
+      border: 1px solid #1B2A7A;
+      border-radius: 15px;
+      padding: 18px;
+      margin-top: 16px;
+      box-shadow: 0 0 12px rgba(60,90,255,0.2);
+      text-align: center;
+    }
+    .subscribirse label { display: block; margin-bottom: 8px; font-weight: bold; color: #B8C5FF; }
+    .subscribirse input[type="email"] {
+      width: 92%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #1B2A7A;
+      background-color: #141C4C;
+      color: #DDDFE6;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .subscribirse input[type="submit"] {
+      background-color: #1A2672;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      color: #DDDFE6;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .subscribirse input[type="submit"]:hover { background-color: #2f3cff; box-shadow: 0 0 10px rgba(100,140,255,0.5); }
+
+    footer {
+      background-color: #0C1445;
+      color: #DDDFE6;
+      padding: 40px 30px;
+      box-shadow: 0 -3px 10px rgba(50,70,255,0.3);
+      width: 100%;
+    }
+    .footer-container {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-col { flex: 1; min-width: 200px; }
+    .footer-col h3 { color: #9AB5FF; margin-bottom: 10px; text-shadow: 0 0 8px rgba(130,160,255,0.6); }
+    .footer-list { list-style: none; padding: 0; }
+    .footer-list li { margin-bottom: 8px; }
+    .footer-list a { color: #B8C5FF; transition: 0.3s; }
+    .footer-list a:hover { color: #C3D0FF; text-shadow: 0 0 6px rgba(150,170,255,0.6); }
+    .btn-top {
+      margin-top: 15px; background-color: #FF2E63; color: #FFFFFF; padding: 8px 15px;
+      border-radius: 10px; font-weight: bold; transition: 0.3s; display: inline-block; text-align: center;
+    }
+    .btn-top:hover { background-color: #FF4F7A; box-shadow: 0 0 18px rgba(255,46,99,0.6); transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        height: auto;
+        padding: 16px 0;
+        gap: 8px;
+      }
+      nav img { display: none; }
+      nav li { width: 100%; }
+      nav a {
+        display: block;
+        width: 92%;
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 14px 0;
+        border-radius: 12px;
+      }
+
+      main { flex-direction: column; align-items: center; }
+      .articulo { width: 92%; padding: 28px; }
+      aside { width: 92%; max-width: none; }
+      .botones-navegacion { flex-direction: column; align-items: center; gap: 15px; }
+      .footer-container { flex-direction: column; align-items: center; text-align: center; }
+      .footer-col { width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      .articulo h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <img src="imgblog/logo.png" alt="LOGO">
+      <li><a href="principal.html">Inicio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publicaciones.html">Publicaciones</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="articulo">
+      <header>
+        <h1>Cruza Recoleta</h1>
+        <p>Publicado por <a href="bautig.html">Bautista Goldberg</a> en Octubre 2025</p>
+        <img src="imgblog/Crecoleta.jpg" alt="Imagen principal del artículo">
+      </header>
+
+      <section>
+        <h2>Ubicación</h2>
+        <p>Cruza Recoleta queda dentro del Recoleta Mall, con entrada por Vicente López 2050, CABA. Está en una zona excelente, llena de bares, restaurantes y movimiento, justo frente al cementerio. Lo curioso es que el boliche está en el tercer piso del shopping, así que terminás subiendo con la gente que va para el mismo lugar, cuando todo lo demás ya está cerrado. Y cuando llegás arriba, te sorprende el lugar: enorme, con luces, sonido potente y mucha onda. Si entrás antes de la 1 podés pasar gratis, y si no, podés sacar la entrada anticipada (que incluye una consumición) o pagar en puerta. En todas las veces que fui nunca tuve que esperar demasiado para entrar. También está la opción de cenar antes en el mall y no pagar entrada, un buen plan para arrancar la noche.</p>
+        <img src="imgblog/cementerioRecoleta.jpg" alt="Imagen de la ubicación">
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Ambiente</h2>
+        <p>Fui varios días: jueves, viernes, sábados y pre feriados, y siempre lo encontré con buena energía. Tiene dos barras grandes que atienden rápido y un balcón enorme donde podés salir a tomar aire o charlar sin perderte la música. No suele estar tan lleno como otros boliches, lo que hace que sea más cómodo para moverse y disfrutar. La música es variada y, cada tanto, aparecen bandas o cantantes invitados que tocan en vivo, lo que le da un toque distinto y evita que se vuelva repetitivo.</p>
+        <p>El entorno también suma: abajo hay un McDonald’s y sobre Las Heras, a una cuadra, pasan colectivos para todos lados. Es una zona que de noche sigue con movimiento, así que nunca te sentís perdido al salir.</p>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Experiencia</h2>
+        <p>Cruza Recoleta siempre me dejó una buena impresión. Es uno de esos lugares que combinan lo cómodo con lo divertido. La ambientación, el sonido y la atención están muy cuidados. Los precios son un poco más altos que en otros lugares, pero nada exagerado, y se entiende por la zona y el nivel del lugar. Siempre la pasé bien, conocí buena gente y hasta vi artistas que fueron a tocar o a hacer presencia. Es un boliche distinto, moderno, con buena onda y una ubicación inmejorable. Ideal para salir con amigos o en pareja y disfrutar una noche completa en Recoleta.</p>
+        <img src="imgblog/cruzar.jpg" alt="Imagen del ambiente">
+      </section>
+
+      <div class="botones-navegacion">
+        <a href="kita.html">← Publicación anterior</a>
+        <a href="tamarisco.html">Siguiente publicación →</a>
+      </div>
+    </section>
+
+    <aside>
+      <section class="perfil">
+        <h3>Hola, Soy Bautista</h3>
+        <img src="imgblog/pfp.jpg" alt="PFP" class="pfp">
+        <p>Me considero un aficionado por la noche, en este Blog voy a estar exhibiendo, recomendando y, por qué no, criticando distintas opciones de actividades para hacer en la Ciudad Autónoma de Buenos Aires y sus alrededores.</p>
+      </section>
+
+      <section class="redes">
+        <h3>Conectemos</h3>
+        <ul id="listaredes">
+          <li><a href="https://www.instagram.com/bautigoldberg/"><img src="imgblog/instagram.png" alt="Instagram"></a></li>
+          <li><a href="https://open.spotify.com/user/bauticai11?si=5fa020f08d204bab"><img src="imgblog/spotify.png" alt="Spotify"></a></li>
+          <li><a href="../linktree.html"><img src="imgblog/linktree.png" alt="Linktree"></a></li>
+        </ul>
+      </section>
+
+      <section class="subscribirse">
+        <h3>Suscribite</h3>
+        <form action="recibido.html">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email">
+          <input type="submit" value="Suscribirme">
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Bautista Goldberg</h3>
+        <p>Blog de la noche</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Categorías</h3>
+        <ul class="footer-list">
+          <li><a href="caba.html">CABA</a></li>
+          <li><a href="pba.html">PBA</a></li>
+          <li><a href="rural.html">RURAL</a></li>
+          <li><a href="cachengue.html">CACHENGUE</a></li>
+          <li><a href="rkt.html">RKT</a></li>
+          <li><a href="pena.html">PEÑA</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Mapa del sitio</h3>
+        <ul class="footer-list">
+          <li><a href="principal.html">Inicio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="formulario.html">Contacto</a></li>
+          <br>
+          <li><a href="#" class="btn-top">↑ Volver arriba</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
