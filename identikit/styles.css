@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+ text-decoration: none;
+}
+
+/* TRIVIA */
+
+.botonjuego{
+    text-decoration: none;
+    background-color: #FAD973; 
+    color: #B22222; 
+    padding: 5px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #FAC874;
+    font-family: "Chewy", system-ui;
+}
+
+.titulojuego{
+    margin-top: 10px;
+    text-decoration: none; 
+    background-color: #FAD973; 
+    color: #B22222; 
+    padding: 5px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    display: inline;
+}
+
+.botonropa{
+    height: 250px;
+    background-color: #FAD973; 
+    color: #B22222; 
+    padding: 0px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #FAC874; 
+    margin-right: 20px;
+}
+
+.fotoropa{
+    height: 250px;
+    background-color: #FAD973; 
+    color: #B22222; 
+    padding: 0px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #FAC874;
+}
+
+.textojuego{
+    text-decoration: none; 
+    background-color: #FAD973; 
+    color: #B22222; 
+    padding: 5px; 
+    font-size: 20px; 
+    display: inline;
+}
+
+#titulomessi{
+    text-decoration: none; 
+    background-color: #AAEEFA; 
+    color: black; 
+    padding: 5px; 
+    font-size: 20px; 
+    display: inline;
+}
+
+#tituloshrek{
+    text-decoration: none; 
+    background-color: #6AA84F; 
+    color: #FFFDD0; 
+    padding: 5px; 
+    font-size: 20px; 
+    display: inline;
+}
+
+#tituloturr{
+    text-decoration: none; 
+    background-color: #A50044; 
+    color: #FFD700; 
+    padding: 5px; 
+    font-size: 20px; 
+    display: inline;
+}
+
+/* LISTAS */
+
+.posters{
+    height: 360px;
+    float: right;
+    margin-right: 200px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+.infopeli{
+    color: #B0C4DE;
+    padding: 15px;
+    font-size: 18px;
+    -webkit-text-stroke: 0;
+    font-family: "Nunito", sans-serif;;
+    
+}
+
+.titulopeli{
+    color: #FF6600;
+    margin: 20px;
+    font-size: 30px;
+    font-family:"Playfair Display", serif;
+    margin-left: 30px; 
+}
+
+.pelinombre{
+    -webkit-text-stroke: 0
+}
+
+.peli{
+    margin-top: 30px;
+    background-color: #001F3F;
+    width: 1090px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#cartelera{
+    padding-top: 25px;
+    color: #FF6600;
+    font-family: "Oswald", sans-serif;
+    background-image: url(img/cartelera.png);
+    width: 250px;
+    height: 108px;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+}
+
+#listabody{
+    margin: 0;
+    padding: 0;
+    background-image: url(img/cine.jpg); 
+    background-size: cover; 
+    background-position: center;
+}
+
+#listapelis{
+    padding-left: 200px;
+    margin-right: 0;
+}
+
+/* INDEX */
+
+#indexbody{
+    margin: 0; 
+    text-align: center; 
+    background-color: #f5f5dc;
+}
+
+#indextitulo{
+   width: fit-content ; 
+   color: rgb(255, 0, 0); 
+   margin: 0%; 
+   text-align: center; 
+   font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.indexsubt{
+    margin: 0; 
+    font-size: 20px; 
+    color: black;
+    font-family:"Libre Franklin", sans-serif;
+}
+
+.redes{
+    margin: 3px; 
+    height: 50px;
+}
+
+.botonindex{
+    background-color: #FA0000; 
+    color: #00FA9C; 
+    padding: 5px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #A53E37; 
+    margin: 6px;
+    font-family: "Chewy", system-ui;   
+}
+
+/* TABLAS */
+
+#tablasbody{
+    background-color: #BBD9AD;
+}
+
+#tabla{
+    border: 2px solid black; 
+    border-collapse: collapse;
+    margin-left: 4px;
+}
+
+.borde{
+    border: 2px solid black
+}
+
+#titulotabla{
+    background-color: #00F0E7;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+}
+
+#nombrecomidas{
+    text-align: center; 
+    font-family:"Patrick Hand", cursive; 
+    background-color: #F06A00; 
+    border: 2px solid black;
+    font-size: 18px;
+
+}
+
+#fotocomidas{
+    text-align: center; 
+    background-color: #F06A00; 
+    border: 2px solid black;   
+}
+
+#tabladificultad{ 
+    text-align: center; 
+    background-color: black;
+    font-family: "Cormorant Garamond", serif,;
+    font-size: 20px;
+}
+
+#facil{
+    background-color: greenyellow;
+}
+
+#mediana{
+    background-color: yellow;
+}
+
+#dificil{
+    background-color: red;
+}
+
+#botontablas{
+    text-decoration: none; 
+    background-color: #BAFA9B; 
+    color: #FA0200; 
+    padding: 5px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #86aa7d;
+    font-family: "Chewy", system-ui;
+}
+
+/* SOBRE MI */
+
+#sobremibody{
+    margin: 0%; 
+    background-color: #B5C2DB;
+}
+
+#sobremi{
+    font-family: "Rosario", sans-serif;
+    font-size: 42px;
+}
+
+#subtsobremi{
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+#texto1{
+    text-align:left; 
+    background-color: #6C93DC; 
+    color: black; 
+    height: 215px; 
+    width: auto; 
+    margin: 0%; 
+    font-size: 22px; 
+    font-family: "Raleway", sans-serif; 
+    padding-left: 1%;
+}
+
+#texto2{
+    text-align:left; 
+    background-color: #6BB6DB; 
+    color: black; 
+    height: 125px; 
+    width: auto; 
+    margin: 0%; 
+    font-size: 22px; 
+    font-family: "Raleway", sans-serif; 
+    padding-left: 1%; 
+    padding-right: 1%;
+}
+
+#botonsobremi{
+    text-decoration: none; 
+    background-color: #57F4FA; 
+    color: #FA902F; 
+    padding: 5px; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    box-shadow: 4px 3px 2px 3px #70ABBA;
+    font-family: "Chewy", system-ui;
+}
+
+/* MENU */
+
+
+#menu{
+    margin: 0; 
+    background-color: rgb(133, 133, 133);  
+    height: 40px;
+    width: 100%;        
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    list-style: none; 
+}
+
+.botonmenu{
+    display: inline-block; 
+    margin-top: 0px;
+}
+
+
+.linkmenu{
+    color: white;
+    width: 110px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: #007BFF;
+    text-decoration: none;
+    margin: 10px;
+    box-shadow: 2px 1px 1px 1px #001F3F;
+    display: inline-block; 
+    text-align: center;  
+}
+   
+
+/* PLAYLIST */
+
+#plbody{
+    background-color: #121212; 
+    height: 100%;
+}
+
+.cancion{
+    margin: 10px; 
+    display: inline-block;
+    width: 100%;
+}
+
+.nombrecancion{
+    font-family: "Nunito", sans-serif;
+    color: white;
+}
+
+#pantallapl{
+    width: 77%; 
+    background-color: #121212; 
+    height: 100%; 
+    display: inline-block;
+    color: white;
+    background-image: url(img/recital.jpg); 
+    background-size: cover; 
+    background-position: center;
+}
+
+#listacanciones{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+#contenedorpl{
+    text-align: center; 
+    height: 100%;
+}
+
+#contcanciones{
+    height: 100%; 
+    width: 22%; 
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.columnainfo{
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.titulopl{
+    font-family:"Raleway", sans-serif;
+    margin: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+.textopl{
+    font-family: "Nunito", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+#bloqueautor {
+  background-color: #121211;  
+  display: inline-block;       
+  color: white;               
+  padding: 15px;               
+  border-radius: 10px;         
+}
+
+
+/* FOOTER */
+
+#pie{
+    background-color: rgb(133, 133, 133); 
+    height: 20vh;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.columna{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    vertical-align: top;
+}
+
+#mapa{
+    margin: 0;  
+    text-align: left;
+    list-style: none;
+}
+
+.botonesmapa{
+    color: white;
+    margin: 5px;
+    width: 100%;
+}
+
+.botonmpa{
+    text-align: left;
+}
+
+
+/* 
+Tipos de selectores: 
+    1) selector de tipo
+    
+    2) selector de clase
+    class="nombre" (se usa .nombre{})
+    mismo estilo a varios elementos
+
+    3) selector de ID
+    id="nombre" (se usa #nombre{})
+    un único elemento
+
+*/
