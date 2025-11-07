@@ -1,116 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linktree - Bautista Goldberg</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap');
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rosario:ital,wght@0,300..700;1,300..700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body{
-            background-color: #395073;
-        }
+    body {
+      background-color: #395073;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        main{
-            background-color: #C1D5F2;
-            width: 50%;
-            height: 80%;
-        }
+    main {
+      background-color: #C1D5F2;
+      width: 50%;
+      max-width: 600px;
+      border-radius: 20px;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
 
-        #foto{
-            margin-top: 2%;
-            border-radius: 200px;
-            border: 2px solid white;
-        }
+    #foto {
+      margin-top: 10px;
+      border-radius: 200px;
+      border: 2px solid white;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
 
-        .logo{
-            width: 50px;
-            margin: 5px;
-        }
+    .logo {
+      width: 50px;
+      margin: 8px;
+      transition: transform 0.3s;
+    }
 
-        a{
-            text-decoration: none;
-        }
+    .logo:hover {
+      transform: scale(1.1);
+    }
 
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        li:hover{
-            background-color: #697e9d9d;
-        }
+    ul {
+      list-style-type: none;
+      margin-top: 15px;
+      padding: 0;
+      width: 100%;
+    }
 
-        li{
-            background-color:#A6B4C8;
-            display: inline-block;
-            margin: 5px;
-            padding: 2px 6px; 
-            border-radius: 5px;
-            width: 70%;
-            height: 40px;
-            text-align: center;
-        }
+    li {
+      background-color: #A6B4C8;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 8px;
+      width: 70%;
+      text-align: center;
+      transition: 0.3s;
+    }
 
-        h1{
-            margin: 0; 
-            font-family:"Montserrat", sans-serif; 
-        }
+    li:hover {
+      background-color: #697e9d9d;
+      transform: scale(1.03);
+    }
 
-        h2{ 
-            font-family:"Montserrat", sans-serif; 
-        }
+    h1, h2 {
+      font-family: "Montserrat", sans-serif;
+    }
 
-        p{
-            font-family: "Lora", serif;
-        }
-        
-        div{
-            font-size: 20px;
-            text-align: center;
-            padding-top: 10px;
-            font-family: "Montserrat", sans-serif;
-            color: white;
-        }
+    h1 {
+      margin-top: 15px;
+      font-size: 1.8rem;
+      color: #24344E;
+    }
 
-    </style>
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #2b3f5f;
+    }
 
+    p {
+      font-family: "Lora", serif;
+      color: #23324b;
+      font-size: 1rem;
+      margin: 10px 20px;
+    }
 
+    div {
+      font-size: 20px;
+      text-align: center;
+      padding-top: 5px;
+      font-family: "Montserrat", sans-serif;
+      color: white;
+    }
 
+    @media (max-width: 768px) {
+      main {
+        width: 80%;
+        padding: 25px 15px;
+      }
+
+      #foto {
+        width: 180px;
+        height: 180px;
+      }
+
+      li {
+        width: 90%;
+        height: auto;
+        padding: 12px;
+      }
+
+      .logo {
+        width: 45px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      main {
+        width: 90%;
+        border-radius: 15px;
+      }
+
+      #foto {
+        width: 150px;
+        height: 150px;
+      }
+
+      li {
+        width: 95%;
+        font-size: 0.9rem;
+      }
+
+      .logo {
+        width: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    
-<center>
-<main>
-<img src="imgLT/bautiAcaballo.jpg" alt="FOTO" height="250px" id="foto">
-<h1>Bautista Goldberg</h1>
-<br>
-<a href="https://open.spotify.com/user/bauticai11?si=02f1a8277cb6485b" target="_blank" ><img src="imgLT/2024_Spotify_logo_without_text_(black).svg.png" alt="" class="logo"></a>
-<a href="https://www.linkedin.com/in/bautista-goldberg-0b0745140/" target="_blank" ><img src="imgLT/Linkedin_circle_black-512.png" alt="" class="logo"></a> 
-<a href="https://www.instagram.com/bautigoldberg/" target="_blank" ><img src="imgLT/logotipo-de-instagram.png" alt="" class="logo"></a>
-<br>
-<h2>Bienvenido a mí Linktree</h2>
-<p>Soy un estudiante de Licenciatura en Gestión de Tecnologías de la Información.
+  <main>
+    <img src="/identikit/img/bautiAcaballo.jpg" alt="Bautista Goldberg" id="foto">
+    <h1>Bautista Goldberg</h1>
     <br>
-     Oriundo de Luján 
-</p>
-<ul>
-    <li>
-    <a href="identikit/index.html" target="_blank"><div>IDENTIKIT</div></a>
-    </li>
-    <li>
-    <a href="blog/principal.html" target="_blank"><div>BLOG</div></a>
-    </li>
-    <li>
-    <a href="" target="_blank"><div>TRABAJO FINAL</div></a>
-    </li>
-</ul>
-</main>
-</center>
+    <a href="https://open.spotify.com/user/bauticai11?si=02f1a8277cb6485b" target="_blank">
+      <img src="imgLT/2024_Spotify_logo_without_text_(black).svg.png" alt="Spotify" class="logo">
+    </a>
+    <a href="https://www.linkedin.com/in/bautista-goldberg-0b0745140/" target="_blank">
+      <img src="imgLT/Linkedin_circle_black-512.png" alt="LinkedIn" class="logo">
+    </a>
+    <a href="https://www.instagram.com/bautigoldberg/" target="_blank">
+      <img src="imgLT/logotipo-de-instagram.png" alt="Instagram" class="logo">
+    </a>
+    <h2>Bienvenido a mi Linktree</h2>
+    <p>Soy estudiante de Licenciatura en Gestión de Tecnologías de la Información.<br> Oriundo de Luján.</p>
 
+    <ul>
+      <li><a href="identikit/index.html" target="_blank"><div>IDENTIKIT</div></a></li>
+      <li><a href="blog/principal.html" target="_blank"><div>BLOG</div></a></li>
+      <li><a href="#"><div>TRABAJO FINAL</div></a></li>
+    </ul>
+  </main>
 </body>
-
 </html>
-
