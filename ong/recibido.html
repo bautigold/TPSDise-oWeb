@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Confirmación de envío - PLANTATE">
+    <meta name="keywords" content="contacto, enviado, ONG, PLANTATE">
+    <meta name="author" content="PLANTATE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Enviado - PLANTATE</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #A5D6A7, #81C784, #66BB6A, #4CAF50);
+            background-size: 400% 400%;
+            animation: move 12s ease infinite;
+            color: white;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        @keyframes move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body.dark-mode { background: #111; }
+
+        .navbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            color: #A5D6A7;
+        }
+
+        .container {
+            margin-top: 160px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .plantate-btn {
+            padding: 14px 45px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 3px solid white;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .plantate-btn:hover {
+            background: white;
+            color: #2E7D32;
+        }
+
+        footer {
+            margin-top: 80px;
+            background: #1B5E20;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: #A5D6A7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover { color: white; }
+
+        .dark-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #2E7D32;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 3px solid #1B5E20;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="home.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="involucrate.html">Involucrate</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="memoria.html">Juego</a>
+    </nav>
+
+    <div class="container">
+        <h1>¡Gracias por tu mensaje!</h1>
+        <p>Nos pondremos en contacto con vos lo antes posible.</p>
+
+        <a href="home.html" class="plantate-btn">Volver al inicio</a>
+    </div>
+
+    <footer>
+        <h4>PLANTATE</h4>
+        <p>Cuidando hoy el bosque del mañana</p>
+        <p><a href="contacto.html">Contacto</a> • <a href="home.html">Inicio</a></p>
+        <p>© 2025 PLANTATE - Todos los derechos reservados</p>
+    </footer>
+
+    <div class="dark-toggle" onclick="toggleDark()">Dark Mode</div>
+
+    <script>
+        function toggleDark() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
